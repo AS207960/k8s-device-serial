@@ -1,0 +1,27 @@
+[package]
+name = "k8s-device-serial"
+version = "0.1.0"
+authors = ["Q <q@misell.cymru>"]
+edition = "2018"
+
+[dependencies]
+tonic = "0.3"
+prost = "0.6"
+log = "0.4"
+pretty_env_logger = "0.4"
+tokio = { version = "0.2", features = ["macros", "uds", "sync", "stream"] }
+ctrlc = "3"
+tower-service = "0.3"
+futures-preview = "0.3.0-alpha.19"
+futures-util = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8"
+uuid = { version = "0.8", features = ["v4"] }
+clap = "2.33"
+
+[patch.crates-io]
+h2 = { git = "https://github.com/AS207960/h2", rev = "199798531bca20d01db300a338febce290949dc8" }
+
+[build-dependencies]
+tonic-build = "0.3"
+
